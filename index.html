@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The $70 Strategy That Actually Works</title>
+    <title>The $20 Strategy That Actually Works</title>
     <style>
         * {
             margin: 0;
@@ -26,59 +26,11 @@
             min-height: 100vh;
         }
 
-        .trust-badge {
-            text-align: center;
-            background: #e8f5e8;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #2d5a2d;
-            margin-bottom: 20px;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .headline {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .subheadline {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-
-        .proof-section {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border-left: 4px solid #28a745;
-        }
-
-        .testimonial {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .testimonial-author {
-            font-size: 12px;
-            color: #888;
-            font-weight: 500;
-        }
-
         .progress-container {
             background: #f1f3f4;
             border-radius: 12px;
             padding: 20px;
-            margin: 25px 0;
+            margin-bottom: 25px;
             text-align: center;
         }
 
@@ -108,6 +60,21 @@
         .progress-text {
             font-size: 14px;
             color: #666;
+        }
+
+        .headline {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .subheadline {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.4;
         }
 
         .steps-section {
@@ -152,27 +119,6 @@
             line-height: 1.4;
         }
 
-        .reality-check {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .reality-check h4 {
-            color: #856404;
-            font-size: 14px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .reality-check p {
-            color: #856404;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
         .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -213,31 +159,123 @@
             background: #218838;
         }
 
-        .disclaimer {
-            font-size: 11px;
-            color: #888;
-            text-align: center;
-            margin-top: 15px;
-            line-height: 1.4;
+        .secondary-cta {
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            color: #28a745;
         }
 
-        .objection-handler {
+        .secondary-cta:hover {
+            background: #e9ecef;
+            color: #218838;
+        }
+
+        .testimonials-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .testimonials-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #28a745;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .testimonial-author {
+            font-size: 12px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .faq-section {
+            margin: 30px 0;
+        }
+
+        .faq-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-item {
             background: #f8f9fa;
             border-radius: 8px;
             padding: 15px;
-            margin: 15px 0;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        .objection-question {
+        .faq-item:hover {
+            background: #e9ecef;
+        }
+
+        .faq-question {
             font-weight: 600;
             color: #dc3545;
             font-size: 14px;
             margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .objection-answer {
+        .faq-answer {
             font-size: 13px;
             color: #495057;
+            line-height: 1.4;
+            display: none;
+        }
+
+        .faq-answer.show {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .faq-toggle {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .reality-check {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .reality-check h4 {
+            color: #856404;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .reality-check p {
+            color: #856404;
+            font-size: 13px;
             line-height: 1.4;
         }
 
@@ -248,14 +286,24 @@
             color: #666;
         }
 
-        .countdown {
-            background: #dc3545;
-            color: white;
-            padding: 10px;
+        .footer {
+            background: #f1f3f4;
+            padding: 20px;
+            margin: 30px -20px 0 -20px;
             text-align: center;
-            border-radius: 6px;
-            margin: 15px 0;
-            font-size: 14px;
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: #888;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc1 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
             font-weight: 600;
         }
 
@@ -274,13 +322,6 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        .highlight {
-            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc1 100%);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
         @media (max-width: 380px) {
             .container {
                 padding: 15px;
@@ -296,31 +337,52 @@
 </head>
 <body>
     <div class="container">
-        <div class="trust-badge fade-in">
-            ✓ Independent Review - Real User Results
-        </div>
-
-        <h1 class="headline fade-in">
-            "Took me 9 days to hit $70, but I got paid"
-        </h1>
-        
-        <p class="subheadline fade-in">
-            My coworker showed me this when I was complaining about my electric bill. Here's exactly what happened (and the strategy that made it work).
-        </p>
-
-        <div class="proof-section fade-in">
-            <div class="testimonial">
-                "It paid me, but reaching the $70 withdrawal took dedication."
-            </div>
-            <div class="testimonial-author">- Real Testerup user review</div>
-        </div>
-
         <div class="progress-container fade-in">
             <div class="progress-title">Your Path to First Cashout</div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressBar"></div>
             </div>
-            <div class="progress-text">Most people quit here. Don't be most people.</div>
+            <div class="progress-text">Most people quit before $20. Don't be most people.</div>
+        </div>
+
+        <h1 class="headline fade-in">
+            "Took me 4 days to hit $20, but I got paid"
+        </h1>
+        
+        <p class="subheadline fade-in">
+            My coworker showed me this when I was complaining about my electric bill. Here's exactly what happened (and why the $20 minimum isn't as bad as it sounds).
+        </p>
+
+        <div class="steps-section">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Download</div>
+                    <div class="step-description">Get the app and create account (takes 2 minutes)</div>
+                </div>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Pick Smart Tasks</div>
+                    <div class="step-description">Focus on games ($5-$15 each) not surveys ($0.50-$2)</div>
+                </div>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Hit $20, Cash Out</div>
+                    <div class="step-description">Usually takes 3-7 days if you pick the right tasks</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section fade-in">
+            <h3 class="cta-title">Ready to Start Earning?</h3>
+            <p class="cta-subtitle">Download now and see what tasks are available</p>
+            <a href="#" class="cta-button" id="mainCTA" onclick="trackConversion()">
+                Start Earning Now
+            </a>
         </div>
 
         <div class="reality-check fade-in">
@@ -328,49 +390,84 @@
             <p>This isn't some "get rich quick" thing. It's <span class="highlight">beermoney</span> - small cash that helps with bills, gas, or coffee. You're trading phone time you'd waste anyway for actual dollars.</p>
         </div>
 
-        <div class="steps-section">
-            <div class="step fade-in">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <div class="step-title">Download & Verify</div>
-                    <div class="step-description">Get the app, verify your account (takes 2 minutes)</div>
-                </div>
+        <div class="testimonials-section fade-in">
+            <h3 class="testimonials-title">What People Are Actually Saying</h3>
+            
+            <div class="testimonial">
+                <div class="testimonial-text">"It paid me, but reaching the $20 withdrawal took dedication."</div>
+                <div class="testimonial-author">- Real Testerup user review</div>
             </div>
-            <div class="step fade-in">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <div class="step-title">Pick Smart Tasks</div>
-                    <div class="step-description">Focus on games ($5-$25 each) not surveys ($0.50-$2)</div>
-                </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">"I received my payment."</div>
+                <div class="testimonial-author">- App Store review</div>
             </div>
-            <div class="step fade-in">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <div class="step-title">Hit $70, Cash Out</div>
-                    <div class="step-description">Usually takes 7-14 days if you pick the right tasks</div>
-                </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">"Legit, but slow."</div>
+                <div class="testimonial-author">- Trustpilot review</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">"Not a get-rich app—think beermoney."</div>
+                <div class="testimonial-author">- Reddit r/beermoney</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">"I needed gas money—this helped."</div>
+                <div class="testimonial-author">- Google Play review</div>
             </div>
         </div>
 
-        <div class="objection-handler fade-in">
-            <div class="objection-question">But what if it's a scam?</div>
-            <div class="objection-answer">Fair question. I thought the same thing. But check Reddit r/beermoney - real people posting real cashout screenshots. The app is legit, just requires patience.</div>
-        </div>
+        <div class="faq-section">
+            <h3 class="faq-title">Common Questions</h3>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    But what if it's a scam?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Fair question. I thought the same thing. But check Reddit r/beermoney - real people posting real cashout screenshots. The app is legit, just requires patience for the $20 minimum.
+                </div>
+            </div>
 
-        <div class="objection-handler fade-in">
-            <div class="objection-question">$70 seems high for minimum payout?</div>
-            <div class="objection-answer">Yeah, it's higher than other apps. But the tasks pay more too. One game test = $15-25 vs doing 50 surveys for $25. Do the math.</div>
-        </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    How long does it really take?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Most people hit $20 in 3-7 days if they focus on game tasks instead of surveys. Games pay $5-15 each vs surveys that pay $0.50-2. Do the math.
+                </div>
+            </div>
 
-        <div class="countdown" id="countdown">
-            ⏱️ Don't wait - app availability changes daily
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    Will this drain my phone battery?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    The games run like normal mobile games. Some drain battery faster than others, but nothing worse than playing regular games. Most tasks only need 10-30 minutes anyway.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    What if they block my account before payout?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    As long as you follow the task instructions and don't try to cheat the system, you should be fine. Thousands of people cash out weekly. Just play the games honestly.
+                </div>
+            </div>
         </div>
 
         <div class="cta-section fade-in">
-            <h3 class="cta-title">Ready to Start Your $70 Path?</h3>
-            <p class="cta-subtitle">Download now and see if you qualify for current tasks</p>
-            <a href="#" class="cta-button" id="mainCTA" onclick="trackConversion()">
-                Get TesterUp App Now
+            <h3 class="cta-title">Don't Wait - Start Today</h3>
+            <p class="cta-subtitle">The sooner you start, the sooner you hit $20</p>
+            <a href="#" class="cta-button secondary-cta" id="secondaryCTA" onclick="trackConversion()">
+                Get the App Now
             </a>
         </div>
 
@@ -378,20 +475,10 @@
             Join 500K+ members already earning daily
         </div>
 
-        <div class="proof-section fade-in">
-            <div class="testimonial">
-                "Website looks kind of sketchy... but hopefully you will receive your money."
+        <div class="footer">
+            <div class="disclaimer">
+                Results vary based on participation and time invested. EarnWithGames HQ provides opportunities to earn rewards through game testing and surveys. This is supplemental income, not employment. Must be 21+ and resident of US, Canada, or UK.
             </div>
-            <div class="testimonial-author">- Before trying it</div>
-            <br>
-            <div class="testimonial">
-                "I received my payment."
-            </div>
-            <div class="testimonial-author">- Same person, 2 weeks later</div>
-        </div>
-
-        <div class="disclaimer">
-            Results vary based on participation and time invested. EarnWithGames HQ provides opportunities to earn rewards through game testing and surveys. This is supplemental income, not employment. Must be 21+ and resident of US, Canada, or UK.
         </div>
     </div>
 
@@ -399,9 +486,28 @@
         // Animate progress bar on load
         window.addEventListener('load', function() {
             setTimeout(function() {
-                document.getElementById('progressBar').style.width = '35%';
+                document.getElementById('progressBar').style.width = '65%';
             }, 1000);
         });
+
+        // FAQ toggle functionality
+        function toggleFAQ(item) {
+            const answer = item.querySelector('.faq-answer');
+            const toggle = item.querySelector('.faq-toggle');
+            
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                toggle.textContent = '+';
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
+                document.querySelectorAll('.faq-toggle').forEach(t => t.textContent = '+');
+                
+                // Open this one
+                answer.classList.add('show');
+                toggle.textContent = '−';
+            }
+        }
 
         // Add fade-in effect to elements as they come into view
         const observerOptions = {
@@ -417,7 +523,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.step, .objection-handler').forEach(el => {
+        document.querySelectorAll('.step, .testimonials-section, .faq-section').forEach(el => {
             observer.observe(el);
         });
 
@@ -440,25 +546,6 @@
                 alert('Please visit this page on your mobile device to download the app!');
             }
         }
-
-        // Update countdown periodically to create urgency
-        let hours = 23;
-        let minutes = 45;
-        
-        setInterval(function() {
-            minutes--;
-            if (minutes < 0) {
-                hours--;
-                minutes = 59;
-            }
-            if (hours < 0) {
-                hours = 23;
-                minutes = 59;
-            }
-            
-            document.getElementById('countdown').innerHTML = 
-                `⏱️ App closes to new users in ${hours}h ${minutes}m`;
-        }, 60000); // Update every minute
     </script>
 </body>
 </html>
