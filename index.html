@@ -127,7 +127,7 @@
 
         .step-title {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
             color: #2c3e50;
             margin-bottom: 4px;
         }
@@ -359,6 +359,23 @@
             }
         }
     </style>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '806823535224289');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="container">
@@ -417,15 +434,15 @@
         </div>
 
         <div class="testimonials-section fade-in">
-            <h3 class="testimonials-title">Join 3M+ people already cashing out with Testerup</h3>
+            <h3 class="testimonials-title">Join 3M+ people already cashing out with Testerup.</h3>
             
             <div class="testimonial">
-                <div class="testimonial-text">"<span class="bold-keyword">I was being skeptical but I received my payment.</span>"</div>
+                <div class="testimonial-text">"<span class="bold-keyword">I received my payment.</span>"</div>
                 <div class="testimonial-author">📱 App Store review</div>
             </div>
 
             <div class="testimonial">
-                <div class="testimonial-text">"My coworker showed me this when I was complaining about my electric bill. <span class="bold-keyword">Took me some time to hit $20, but I got paid.</span>"</div>
+                <div class="testimonial-text">"My coworker showed me this when I was complaining about my electric bill. <span class="bold-keyword">Took me 2 days to hit $20, but I got paid.</span>"</div>
                 <div class="testimonial-author">⭐ Trustpilot review</div>
             </div>
 
@@ -440,7 +457,7 @@
             </div>
 
             <div class="testimonial">
-                <div class="testimonial-text">"<span class="bold-keyword">App worth trying.</span> Turned my phone addiction to something useful!"</div>
+                <div class="testimonial-text">"<span class="bold-keyword">I needed gas money</span>—this helped."</div>
                 <div class="testimonial-author">📱 Google Play review</div>
             </div>
         </div>
@@ -499,7 +516,7 @@
 
         <div class="footer">
             <div class="disclaimer">
-                Results vary based on participation and time invested. EarnWithGames HQ provides opportunities to earn rewards through game testing and surveys. This is supplemental income, not employment. Must be 21+.
+                Results vary based on participation and time invested. EarnWithGames HQ provides opportunities to earn rewards through game testing and surveys. This is supplemental income, not employment. Must be 21+ and resident of US, Canada, or UK.
             </div>
         </div>
     </div>
@@ -551,22 +568,17 @@
 
         // CTA tracking function
         function trackConversion() {
-            // Add your tracking pixel/analytics here
-            console.log('Conversion tracked');
-            
-            // Detect mobile OS and redirect accordingly
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            
-            if (/android/i.test(userAgent)) {
-                // Redirect to Google Play Store
-                window.location.href = 'https://play.google.com/store/apps/details?id=com.testerup.app';
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // Redirect to Apple App Store
-                window.location.href = 'https://apps.apple.com/app/testerup/id1234567890';
-            } else {
-                // Fallback - could show modal asking to visit on mobile
-                alert('Please visit this page on your mobile device to download the app!');
+            // Check if subscribe event has already been tracked in this session
+            if (!sessionStorage.getItem('subscribeTracked')) {
+                // Track Facebook subscribe event
+                fbq('track', 'Subscribe');
+                // Mark as tracked for this session
+                sessionStorage.setItem('subscribeTracked', 'true');
+                console.log('Subscribe event tracked');
             }
+            
+            // Redirect to the tracking URL
+            window.location.href = 'https://track.gamingboost.club';
         }
     </script>
 </body>
