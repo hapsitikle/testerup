@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The App Everyone's Talking About This Fall</title>
+    <title>The App Everyone's Using for Extra Cash</title>
     <style>
         * {
             margin: 0;
@@ -26,69 +26,80 @@
             min-height: 100vh;
         }
 
-        .progress-container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 25px;
+        /* Hero Section */
+        .hero-section {
             text-align: center;
-            color: white;
+            padding: 20px 0 30px 0;
         }
 
-        .progress-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .progress-bar {
-            background: rgba(255,255,255,0.3);
-            height: 8px;
-            border-radius: 4px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            background: linear-gradient(90deg, #28a745, #20c997);
-            height: 100%;
-            width: 0%;
-            border-radius: 4px;
-            transition: width 2s ease-in-out;
-        }
-
-        .progress-text {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-
-        .main-headline {
-            font-size: 26px;
+        .hero-headline {
+            font-size: 28px;
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 12px;
             line-height: 1.2;
-            text-align: center;
         }
 
-        .social-intro {
+        .hero-subheadline {
             font-size: 16px;
-            color: #667eea;
+            color: #1e3a8a;
             margin-bottom: 25px;
-            text-align: center;
             font-weight: 500;
         }
 
-        .steps-header {
-            font-size: 18px;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 20px;
+        .hero-image {
+            margin: 25px 0;
             text-align: center;
         }
 
-        .steps-section {
-            margin: 25px 0;
+        .hero-image img {
+            max-width: 280px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .hero-cta {
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+            margin: 20px 0;
+        }
+
+        .hero-cta:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+        }
+
+        .trust-note {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        /* Quick Start Guide */
+        .quick-start {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
         }
 
         .step {
@@ -96,198 +107,161 @@
             align-items: flex-start;
             margin-bottom: 20px;
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid #1e3a8a;
         }
 
         .step-number {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 28px;
-            height: 28px;
+            background: #fbbf24;
+            color: #1e3a8a;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
-            margin-right: 15px;
+            margin-right: 18px;
             flex-shrink: 0;
         }
 
-        .step-content {
-            flex: 1;
-        }
-
-        .step-title {
+        .step-content h4 {
             font-weight: 600;
-            font-size: 15px;
+            font-size: 16px;
             color: #2c3e50;
             margin-bottom: 6px;
         }
 
-        .step-description {
-            font-size: 13px;
+        .step-content p {
+            font-size: 14px;
             color: #666;
             line-height: 1.4;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px 20px;
+        /* Social Proof Bar */
+        .social-proof-bar {
+            background: #fef3c7;
+            padding: 20px;
             border-radius: 12px;
             text-align: center;
-            margin: 25px 0;
+            margin: 30px 0;
+            border-left: 4px solid #fbbf24;
         }
 
-        .cta-title {
+        .social-stats {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
             font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: block;
         }
 
-        .cta-subtitle {
-            font-size: 14px;
+        .stat-label {
+            font-size: 12px;
+            color: #92400e;
+            margin-top: 4px;
+        }
+
+        /* Trustpilot Section */
+        .trustpilot-section {
+            margin: 35px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .trustpilot-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
-            opacity: 0.9;
         }
 
-        .cta-button {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 16px 32px;
+        .trustpilot-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00b67a;
+            margin-right: 10px;
+        }
+
+        .trustpilot-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .stars {
+            color: #00b67a;
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        .rating-text {
             font-size: 16px;
             font-weight: 600;
-            border-radius: 25px;
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            color: #333;
         }
 
-        .cta-button:hover {
-            background: #218838;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-        }
-
-        .secondary-cta {
-            background: white;
-            border: 2px solid #28a745;
-            color: #28a745;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
-        }
-
-        .secondary-cta:hover {
-            background: #f8f9fa;
-            color: #218838;
-            border-color: #218838;
-        }
-
-        .social-momentum {
-            background: #e8f5e8;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 20px 0;
-            border-left: 4px solid #28a745;
-        }
-
-        .social-momentum-text {
-            font-size: 14px;
-            color: #2d5a2d;
-            font-weight: 500;
-        }
-
-        .reality-check {
-            background: #fff8e1;
-            border: 1px solid #ffcc02;
-            padding: 18px;
-            border-radius: 12px;
-            margin: 25px 0;
-        }
-
-        .reality-check h4 {
-            color: #f57c00;
-            font-size: 15px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .reality-check p {
-            color: #ef6c00;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .testimonials-section {
-            margin: 30px 0;
-            padding: 25px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-        }
-
-        .testimonials-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .testimonials-subtitle {
-            font-size: 14px;
-            color: #667eea;
-            margin-bottom: 25px;
-            text-align: center;
-            font-style: italic;
-        }
-
-        .testimonial {
-            background: white;
+        .review-item {
+            background: #fafafa;
             padding: 16px;
-            border-radius: 12px;
+            border-radius: 10px;
             margin-bottom: 15px;
-            border-left: 4px solid #28a745;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 3px solid #00b67a;
         }
 
-        .testimonial-text {
-            font-style: italic;
-            color: #555;
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 10px;
-            font-size: 14px;
-            line-height: 1.5;
         }
 
-        .testimonial-author {
-            font-size: 12px;
-            color: #888;
-            font-weight: 500;
-        }
-
-        .faq-section {
-            margin: 30px 0;
-        }
-
-        .faq-title {
-            font-size: 18px;
+        .reviewer-name {
             font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .review-stars {
+            color: #00b67a;
+            font-size: 14px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .review-date {
+            font-size: 11px;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 35px 0;
         }
 
         .faq-item {
             background: #f8f9fa;
             border-radius: 10px;
-            padding: 16px;
-            margin-bottom: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
             cursor: pointer;
             transition: all 0.3s;
             border: 1px solid transparent;
@@ -295,13 +269,13 @@
 
         .faq-item:hover {
             background: #e9ecef;
-            border-color: #667eea;
+            border-color: #1e3a8a;
         }
 
         .faq-question {
             font-weight: 600;
-            color: #dc3545;
-            font-size: 14px;
+            color: #1e3a8a;
+            font-size: 15px;
             margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
@@ -309,7 +283,7 @@
         }
 
         .faq-answer {
-            font-size: 13px;
+            font-size: 14px;
             color: #495057;
             line-height: 1.5;
             display: none;
@@ -321,11 +295,54 @@
         }
 
         .faq-toggle {
-            font-size: 16px;
-            color: #667eea;
+            font-size: 18px;
+            color: #fbbf24;
             font-weight: bold;
         }
 
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #6f42c1 0%, #ffd700 100%);
+            color: white;
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .final-cta h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .final-cta p {
+            font-size: 14px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .final-cta-button {
+            background: white;
+            color: #6f42c1;
+            border: none;
+            padding: 16px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .final-cta-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
         .footer {
             background: #f1f3f4;
             padding: 20px;
@@ -337,21 +354,9 @@
             font-size: 11px;
             color: #888;
             line-height: 1.4;
-            margin-bottom: 15px;
         }
 
-        .highlight {
-            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc1 100%);
-            padding: 3px 7px;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-
-        .bold-keyword {
-            font-weight: 600;
-            color: #28a745;
-        }
-
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -363,35 +368,19 @@
             }
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
         .fade-in {
             animation: fadeInUp 0.6s ease-out;
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
         }
 
         @media (max-width: 380px) {
             .container {
                 padding: 15px;
             }
-            .main-headline {
+            .hero-headline {
                 font-size: 24px;
             }
-            .cta-title {
-                font-size: 16px;
+            .hero-image img {
+                max-width: 250px;
             }
         }
     </style>
@@ -416,113 +405,129 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
 <body>
     <div class="container">
         
-        <div class="progress-container fade-in">
-            <div class="progress-title">Your Path to First Cashout</div>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
+        <!-- Hero Section -->
+        <div class="hero-section fade-in">
+            <h1 class="hero-headline">
+                Turn Your Phone Time Into Real Money
+            </h1>
+            <p class="hero-subheadline">
+                Perfect for covering those extra fall expenses
+            </p>
+            
+            <div class="hero-image">
+                <img src="images/phones.jpeg" alt="App interface showing earnings" />
             </div>
-            <div class="progress-text">Most people quit before $20. Don't be most people.</div>
+            
+            <a href="#" class="hero-cta" id="mainCTA" onclick="trackConversion()">
+                Start Earning Today
+            </a>
+            
+            <p class="trust-note">
+                Cash out starts at just $20 • Join 3M+ users already earning
+            </p>
         </div>
 
-        <h1 class="main-headline fade-in">
-            The App Everyone's Talking About
-        </h1>
-        
-        <p class="social-intro fade-in">
-            Just like the 3 million people sharing their wins online...
-        </p>
-
-        <h3 class="steps-header fade-in">Three simple steps to get started</h3>
-
-        <div class="steps-section">
-            <div class="step fade-in">
+        <!-- Quick Start Guide -->
+        <div class="quick-start fade-in">
+            <h2 class="section-title">How It Works</h2>
+            
+            <div class="step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">Download this app</div>
-                    <div class="step-description">Get the app and create account (takes 2 minutes)</div>
+                    <h4>Download This App</h4>
+                    <p>Free download, quick setup in under 2 minutes</p>
                 </div>
             </div>
-            <div class="step fade-in">
+            
+            <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">Pick Smart Tasks</div>
-                    <div class="step-description">Focus on games ($5-$15 each) over surveys ($0.50-$2)</div>
+                    <h4>Play & Test Games</h4>
+                    <p>Choose from hundreds of games and earn $5-$15 per game</p>
                 </div>
             </div>
-            <div class="step fade-in">
+            
+            <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">Cash out starts at $20</div>
-                    <div class="step-description">Small, consistent amounts that actually add up</div>
+                    <h4>Cash Out at $20</h4>
+                    <p>Quick payouts to PayPal or gift cards</p>
                 </div>
             </div>
         </div>
 
-        <div style="text-align: center; margin: 25px 0;">
-            <a href="#" class="cta-button pulse" id="mainCTA" onclick="trackConversion()">
-                Get This App
-            </a>
+        <!-- Social Proof Bar -->
+        <div class="social-proof-bar fade-in">
+            <div class="social-stats">
+                <div class="stat-item">
+                    <span class="stat-number">3M+</span>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.1★</span>
+                    <div class="stat-label">App Rating</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">16k+</span>
+                    <div class="stat-label">Reviews</div>
+                </div>
+            </div>
         </div>
 
-        <p style="text-align: center; font-style: italic; color: #667eea; font-size: 14px; margin: 15px 0;">
-            Join the 3 million people already using this app
-        </p>
-
-        <div class="reality-check fade-in">
-            <h4>Here's the real deal:</h4>
-            <p>This isn't about replacing your job. Think of it like getting paid for time you'd spend on your phone anyway. <span class="highlight">Small, consistent amounts that actually add up.</span></p>
-        </div>
-
-        <div class="testimonials-section fade-in">
-            <h3 class="testimonials-title">Real People, Real Results</h3>
-            <p class="testimonials-subtitle">Here's what people are saying...</p>
+        <!-- Trustpilot Reviews Section -->
+        <div class="trustpilot-section fade-in">
+            <div class="trustpilot-header">
+                <div class="trustpilot-logo">Trustpilot</div>
+                <div class="trustpilot-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-text">4.1 rating</span>
+                </div>
+            </div>
             
-            <div class="testimonial">
-                <div class="testimonial-text">"My coworker showed me this when I was complaining about my electric bill. <span class="bold-keyword">Took me some time to reach cashout, but I got paid.</span>"</div>
-                <div class="testimonial-author">⭐ Trustpilot review</div>
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="reviewer-name">Brandon H.</span>
+                    <span class="review-stars">★★★★☆</span>
+                </div>
+                <div class="review-text">
+                    "My experience with this app was a slow process but they pay you what you earn! Great games to try if you can play them all you can make small amount a day."
+                </div>
+                <div class="review-date">3 hours ago</div>
             </div>
-
-            <div class="testimonial">
-                <div class="testimonial-text">"<span class="bold-keyword">I was being skeptical but I received my payment.</span>"</div>
-                <div class="testimonial-author">📱 App Store review</div>
-            </div>
-
-            <div class="testimonial">
-                <div class="testimonial-text">"<span class="bold-keyword">Perfect timing</span> with back-to-school expenses coming up."</div>
-                <div class="testimonial-author">📱 Google Play review</div>
-            </div>
-
-            <div class="testimonial">
-                <div class="testimonial-text">"Not a get-rich app—<span class="bold-keyword">think beermoney.</span>"</div>
-                <div class="testimonial-author">🔴 Reddit r/beermoney</div>
-            </div>
-
-            <div class="testimonial">
-                <div class="testimonial-text">"<span class="bold-keyword">I needed gas money</span>—this helped."</div>
-                <div class="testimonial-author">📱 Google Play review</div>
+            
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="reviewer-name">Lucas V.</span>
+                    <span class="review-stars">★★★★★</span>
+                </div>
+                <div class="review-text">
+                    "It was easy to gain the money and achieve my goals through this app."
+                </div>
+                <div class="review-date">4 hours ago</div>
             </div>
         </div>
 
-        <div class="faq-section">
-            <h3 class="faq-title">Common Questions</h3>
+        <!-- FAQ Section -->
+        <div class="faq-section fade-in">
+            <h2 class="section-title">Common Questions</h2>
             
             <div class="faq-item" onclick="toggleFAQ(this)">
                 <div class="faq-question">
-                    But what if it's a scam?
+                    Is this actually legit or another scam?
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    Totally get why you'd wonder about this! Most people do. But check Reddit r/beermoney - real people posting real cashout screenshots. The app is legit, just requires patience for the $20 minimum.
+                    Totally understand the skepticism! But check the reviews above - thousands of real people are getting paid. The app has been around for years with millions of users. Just takes patience to reach the $20 minimum.
                 </div>
             </div>
 
             <div class="faq-item" onclick="toggleFAQ(this)">
                 <div class="faq-question">
-                    How long does it really take?
+                    How long to reach $20?
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    Most people hit $20 in 2-3 days if they focus on game tasks instead of surveys. Games pay $5-15 each vs surveys that pay $0.50-2. Do the math.
+                    Most people reach $20 within a few days to a week, depending on how many games they complete. Focus on the higher-paying game tasks ($5-15 each) rather than surveys for faster progress.
                 </div>
             </div>
 
@@ -532,44 +537,39 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    The games run like normal mobile games. Some drain battery faster than others, but nothing worse than playing regular games. Most tasks only need 10-30 minutes anyway.
+                    The games run just like any other mobile games you'd play. Most tasks only require 10-30 minutes of gameplay, so battery usage is similar to your normal phone gaming.
                 </div>
             </div>
 
             <div class="faq-item" onclick="toggleFAQ(this)">
                 <div class="faq-question">
-                    What if they block my account before payout?
+                    What if my account gets blocked?
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    As long as you follow the task instructions and don't try to cheat the system, you should be fine. Thousands of people cash out weekly. Just play the games honestly.
+                    As long as you follow the game instructions and complete tasks honestly, you'll be fine. Thousands of people cash out every week without issues. Just play the games as intended.
                 </div>
             </div>
         </div>
 
-        <div class="cta-section fade-in">
-            <h3 class="cta-title">Ready to try what everyone's using?</h3>
-            <p class="cta-subtitle">The sooner you start, the sooner you earn</p>
-            <a href="#" class="cta-button secondary-cta" id="secondaryCTA" onclick="trackConversion()">
-                Get This App
+        <!-- Final CTA Section -->
+        <div class="final-cta fade-in">
+            <h3>Ready to Start Earning?</h3>
+            <p>Join millions of people already turning their phone time into cash</p>
+            <a href="#" class="final-cta-button" id="secondaryCTA" onclick="trackConversion()">
+                Download This App
             </a>
         </div>
 
+        <!-- Footer -->
         <div class="footer">
             <div class="disclaimer">
-                Results vary based on participation and time invested. EarnWithGames HQ provides opportunities to earn rewards through game testing and surveys. This is supplemental income, not employment. Must be 21+
+                Results vary based on participation and time invested. EarnWithGames HQ provides opportunities to earn rewards through game testing and surveys. This is supplemental income, not employment. Must be 21+ and resident of US, Canada, or UK.
             </div>
         </div>
     </div>
 
     <script>
-        // Animate progress bar on load
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('progressBar').style.width = '65%';
-            }, 1000);
-        });
-
         // FAQ toggle functionality
         function toggleFAQ(item) {
             const answer = item.querySelector('.faq-answer');
@@ -603,7 +603,7 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
             });
         }, observerOptions);
 
-        document.querySelectorAll('.step, .testimonials-section, .faq-section').forEach(el => {
+        document.querySelectorAll('.quick-start, .trustpilot-section, .faq-section').forEach(el => {
             observer.observe(el);
         });
 
