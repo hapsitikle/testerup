@@ -61,14 +61,14 @@
         }
 
         .bonus-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-        .bonus-progress h3 {
-    font-size: 18px;
+.bonus-progress h3 {
+    font-size: 15px;
     font-weight: 700;
     text-align: left;
 }
@@ -79,20 +79,9 @@
 
 .expires-text {
     color: #ef4444;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 700;
 }
-
-        .bonus-timer {
-            text-align: right;
-        }
-
-        .timer-text {
-            color: #fbbf24;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
         .progress-bar {
             background: #3a4047;
             height: 6px;
@@ -396,8 +385,7 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
             function tick() {
                 const minutes = Math.floor(timeLeft / 60);
                 const seconds = timeLeft % 60;
-                timerElement.textContent = `Bonus expires in ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;                
                 if (timeLeft > 0) {
                     timeLeft--;
                     setTimeout(tick, 1000);
