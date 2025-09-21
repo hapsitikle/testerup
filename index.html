@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The App Everyone's Using for Extra Cash</title>
+    <title>TesterUp - Start Earning Now</title>
     <style>
         * {
             margin: 0;
@@ -13,373 +13,236 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            background: #2a2f3a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
         .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            min-height: 100vh;
-        }
-
-        /* Hero Section */
-        .hero-section {
+            max-width: 360px;
+            width: 100%;
+            background: #1e2329;
+            border-radius: 15px;
+            padding: 0;
             text-align: center;
-            padding: 10px 0 15px 0;
+            border: 1px solid #3a4047;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(239, 68, 68, 0.15);
         }
 
-        .hero-headline {
-            font-size: 28px;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 5px;
-            line-height: 1.2;
+        .header {
+            padding: 20px 20px 15px 20px;
+            border-bottom: 1px solid #3a4047;
         }
 
-        .hero-subheadline {
-            font-size: 16px;
-            color: #1e3a8a;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .bonus-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 15px;
+        }
+
+        .bonus-progress h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            text-align: left;
+        }
+
+        .bonus-timer {
+            text-align: right;
+        }
+
+        .timer-text {
+            color: #fbbf24;
+            font-size: 13px;
             font-weight: 500;
         }
 
-        .hero-image {
-            margin: 18px 0;
-            text-align: center;
+        .progress-bar {
+            background: #3a4047;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 0;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
         }
 
-        .hero-image img {
-            max-width: 180px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        .progress-fill {
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            height: 100%;
+            width: 75%;
+            border-radius: 3px;
         }
 
-        .hero-cta {
-            background: #1e3a8a;
+        .content {
+            padding: 20px 20px 20px 20px;
+        }
+
+        .instructions-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
             color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 30px;
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
-            margin: 10px 0;
+            text-align: left;
         }
 
-        .hero-cta:hover {
-            background: #1e40af;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
-        }
-
-        .trust-note {
-            font-size: 13px;
-            color: #666;
-            font-style: italic;
-            margin-top: 12px;
-        }
-
-        /* Quick Start Guide */
-        .quick-start {
-            margin: 25px 0;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 25px;
+        .steps-container {
+            background: #262b34;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.25);
         }
 
         .step {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
-            background: #f8f9fa;
-            padding: 18px;
-            border-radius: 12px;
-            border-left: 4px solid #1e3a8a;
+            margin-bottom: 0;
+            text-align: left;
+            padding: 15px;
+            border-radius: 0;
+            background: transparent;
+            border-bottom: 1px solid #3a4047;
         }
 
-        .step-number {
-            background: #fbbf24;
-            color: #1e3a8a;
-            width: 32px;
-            height: 32px;
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step-icon {
+            width: 22px;
+            height: 22px;
+            background: #ef4444;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
-            font-weight: 600;
-            margin-right: 18px;
+            margin-right: 15px;
             flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .step-content h4 {
-            font-weight: 600;
-            font-size: 16px;
-            color: #2c3e50;
-            margin-bottom: 6px;
-        }
-
-        .step-content p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.4;
-        }
-
-        /* Social Proof Bar */
-        .social-proof-bar {
-            background: #fef3c7;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 30px 0;
-            border-left: 4px solid #fbbf24;
-        }
-
-        .social-stats {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1e3a8a;
-            display: block;
-        }
-
-        .stat-label {
+        .step-icon::after {
+            content: "✓";
+            color: white;
             font-size: 12px;
-            color: #92400e;
-            margin-top: 4px;
-        }
-
-        /* Trustpilot Section */
-        .trustpilot-section {
-            margin: 10px 0;
-            padding: 15px;
-            background: white;
-            border-radius: 15px;
-        }
-
-        .trustpilot-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .trustpilot-logo {
-            font-size: 18px;
-            font-weight: 700;
-            color: #00b67a;
-            margin-right: 10px;
-        }
-
-        .trustpilot-rating {
-            display: flex;
-            align-items: center;
-        }
-
-        .stars {
-            color: #00b67a;
-            font-size: 18px;
-            margin-right: 8px;
-        }
-
-        .rating-text {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .review-item {
-            background: #fafafa;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 8px;
-            border-left: 3px solid #00b67a;
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-
-        .reviewer-name {
-            font-weight: 600;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .review-stars {
-            color: #00b67a;
-            font-size: 14px;
-        }
-
-        .review-text {
-            font-size: 13px;
-            color: #555;
-            line-height: 1.4;
-            font-style: italic;
-        }
-
-        .review-date {
-            font-size: 11px;
-            color: #888;
-            margin-top: 4px;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            margin: 35px 0;
-        }
-
-        .faq-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 18px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .faq-item:hover {
-            background: #e9ecef;
-            border-color: #1e3a8a;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: #1e3a8a;
-            font-size: 15px;
-            margin-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-answer {
-            font-size: 14px;
-            color: #495057;
-            line-height: 1.5;
-            display: none;
-        }
-
-        .faq-answer.show {
-            display: block;
-            margin-top: 12px;
-        }
-
-        .faq-toggle {
-            font-size: 18px;
-            color: #fbbf24;
             font-weight: bold;
         }
 
-        /* Final CTA Section */
-        .final-cta {
-            background: linear-gradient(135deg, #6f42c1 0%, #ffd700 100%);
+        .step-content h4 {
+            font-size: 15px;
+            font-weight: 600;
             color: white;
-            padding: 30px 25px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 35px 0;
+            margin-bottom: 5px;
         }
 
-        .final-cta h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .final-cta p {
-            font-size: 14px;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-
-        .final-cta-button {
-            background: white;
-            color: #6f42c1;
-            border: none;
-            padding: 16px 35px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 25px;
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .final-cta-button:hover {
-            background: #f8f9fa;
-            transform: translateY(-1px);
-        }
-
-        /* Footer */
-        .footer {
-            background: #f1f3f4;
-            padding: 20px;
-            margin: 30px -20px 0 -20px;
-            text-align: center;
-        }
-
-        .disclaimer {
-            font-size: 11px;
-            color: #888;
+        .step-content p {
+            font-size: 13px;
+            color: #9ca3af;
             line-height: 1.4;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .download-button {
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            margin: 15px 0 10px 0;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
         }
 
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
+        .download-button:hover {
+            transform: translateY(-1px);
         }
 
-        @media (max-width: 380px) {
+        .disclaimer {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        .social-proof {
+            background: #262b34;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .social-proof-icon {
+            width: 35px;
+            height: 35px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e2329;
+        }
+
+        .social-proof-content {
+            flex: 1;
+        }
+
+        .social-proof-text {
+            font-size: 14px;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .earned-amount {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+
+        .social-proof-time {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 480px) {
             .container {
-                padding: 15px;
-            }
-            .hero-headline {
-                font-size: 24px;
-            }
-            .hero-image img {
-                max-width: 170px;
+                margin: 10px;
+                max-width: 340px;
             }
         }
     </style>
@@ -403,221 +266,103 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-placeholder">LOGO PLACEHOLDER</div>
+            </div>
+            
+            <div class="bonus-section">
+                <div class="bonus-progress">
+                    <h3>Bonus Progress</h3>
+                </div>
+                <div class="bonus-timer">
+                    <div class="timer-text">Bonus expires in 04:59</div>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
         
-        <!-- Hero Section -->
-        <div class="hero-section fade-in">
-            <h1 class="hero-headline">
-                Turn Your Phone Time Into Real Money
-            </h1>
+        <div class="content">
+            <div class="instructions-title">Follow the Instructions Below:</div>
             
-            <!-- Trustpilot Reviews Section -->
-            <div class="trustpilot-section">
-                <div class="trustpilot-header">
-                    <div class="trustpilot-logo">Trustpilot</div>
-                    <div class="trustpilot-rating">
-                        <span class="stars">★★★★☆</span>
-                        <span class="rating-text">4.1 rating</span>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon"></div>
+                    <div class="step-content">
+                        <h4>Install the Testerup App</h4>
+                        <p>Takes 30 seconds • Click the button below!</p>
                     </div>
                 </div>
                 
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">David R.</span>
-                        <span class="review-stars">★★★★★</span>
+                <div class="step">
+                    <div class="step-icon"></div>
+                    <div class="step-content">
+                        <h4>Get Started with 1-3 Activities</h4>
+                        <p>Complete offers, surveys, & tasks to earn!</p>
                     </div>
-                    <div class="review-text">
-                        "I was honestly skeptical at first, but I made my first cashout today and the money hit my PayPal in less than 24 hours. Highly suggest giving it a try."
-                    </div>
-                    <div class="review-date">3 hours ago</div>
                 </div>
                 
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Chris M.</span>
-                        <span class="review-stars">★★★★★</span>
+                <div class="step">
+                    <div class="step-icon"></div>
+                    <div class="step-content">
+                        <h4>Pro tip: In-app purchases help you progress faster</h4>
+                        <p>They reimburse you for anything you spend!</p>
                     </div>
-                    <div class="review-text">
-                        "Told my brother to play games on here and cash has been stacking slowly LOL. Not life-changing money, but covers extra stuff."
-                    </div>
-                    <div class="review-date">4 hours ago</div>
                 </div>
-
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Emily S.</span>
-                        <span class="review-stars">★★★★★</span>
+                
+                <div class="step">
+                    <div class="step-icon"></div>
+                    <div class="step-content">
+                        <h4>Redeem & Repeat Anytime</h4>
+                        <p>Withdraw anytime • Avg. processing: 2 minutes</p>
                     </div>
-                    <div class="review-text">
-                        "Using this to fund makeup and shopping sprees. It's basically my fun-money fund now 😂."
-                    </div>
-                    <div class="review-date">3 hours ago</div>
                 </div>
             </div>
             
-            <a href="#" class="hero-cta" id="mainCTA" onclick="trackConversion()">
-                Download Free App
+            <a href="#" class="download-button" id="mainCTA" onclick="trackConversion()">
+                Download Now!
             </a>
             
-            <p class="trust-note">
-                Cash out starts at just $10 • Join 1M+ users already earning
-            </p>
-        </div>
-
-        <!-- Quick Start Guide -->
-        <div class="quick-start fade-in">
-            <h2 class="section-title">How It Works</h2>
+            <div class="disclaimer">Results may vary.</div>
             
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h4>Download This App</h4>
-                    <p>Free download, quick setup in under 2 minutes</p>
+            <div class="social-proof">
+                <div class="social-proof-icon">$</div>
+                <div class="social-proof-content">
+                    <div class="social-proof-text">Sarah K. completed 3 gaming offers and <span class="earned-amount">earned $25</span></div>
+                    <div class="social-proof-time">10 minutes ago</div>
                 </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h4>Play & Test Games</h4>
-                    <p>Choose from hundreds of games and earn up to $100-$150 per game</p>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h4>Cash Out</h4>
-                    <p>Quick payouts to PayPal or gift cards</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="images/phones.jpeg" alt="App interface showing earnings" />
-            <p class="hero-subheadline">
-                Perfect for covering gas and coffee
-            </p>
-        </div>
-
-        <!-- Social Proof Bar -->
-        <div class="social-proof-bar fade-in">
-            <div class="social-stats">
-                <div class="stat-item">
-                    <span class="stat-number">1M+</span>
-                    <div class="stat-label">Active Users</div>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">4.1★</span>
-                    <div class="stat-label">App Rating</div>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">20k+</span>
-                    <div class="stat-label">Reviews</div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- FAQ Section -->
-        <div class="faq-section fade-in">
-            <h2 class="section-title">Common Questions</h2>
-            
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    Is this actually legit or another scam?
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    Totally understand the skepticism! But check the reviews above - thousands of real people are getting paid. The app has been around for years with millions of users.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    How much can I earn?
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    It totally depends on the amount of time you dedicate to testing and playing games. If you consistently play 2-3 games daily, you can make a couple hundred bucks each week.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    Will this drain my phone battery?
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    The games run just like any other mobile games you'd play. Most tasks only require 10-30 minutes of gameplay, so battery usage is similar to your normal phone gaming.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    What if my account gets blocked?
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    As long as you follow the game instructions and complete tasks honestly, you'll be fine. Thousands of people cash out every week without issues. Just play the games as intended.
-                </div>
-            </div>
-        </div>
-
-        <!-- Final CTA Section -->
-        <div class="final-cta fade-in">
-            <h3>Ready to Start Earning?</h3>
-            <p>Join millions of people already turning their phone time into cash</p>
-            <a href="#" class="final-cta-button" id="secondaryCTA" onclick="trackConversion()">
-                Download This App
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <div class="disclaimer">
-                Results vary based on participation and time invested. EarnWithGames HQ provides opportunities to earn rewards through game testing and surveys. This is supplemental income, not employment. Must be 21+ and resident of US, Canada, or UK.
             </div>
         </div>
     </div>
 
     <script>
-        // FAQ toggle functionality
-        function toggleFAQ(item) {
-            const answer = item.querySelector('.faq-answer');
-            const toggle = item.querySelector('.faq-toggle');
+        // Countdown timer
+        function updateTimer() {
+            const timerElement = document.querySelector('.timer-text');
+            let timeLeft = 299; // 4:59 in seconds
             
-            if (answer.classList.contains('show')) {
-                answer.classList.remove('show');
-                toggle.textContent = '+';
-            } else {
-                // Close all other FAQs
-                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
-                document.querySelectorAll('.faq-toggle').forEach(t => t.textContent = '+');
+            function tick() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `Bonus expires in ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 
-                // Open this one
-                answer.classList.add('show');
-                toggle.textContent = '−';
-            }
-        }
-
-        // Add fade-in effect to elements as they come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    setTimeout(tick, 1000);
+                } else {
+                    timerElement.textContent = 'Bonus expired!';
                 }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.quick-start, .trustpilot-section, .faq-section').forEach(el => {
-            observer.observe(el);
-        });
-
+            }
+            
+            tick();
+        }
+        
+        // Start timer when page loads
+        window.addEventListener('load', updateTimer);
+        
         // CTA tracking function
         function trackConversion() {
             // Check if subscribe event has already been tracked in this session
