@@ -119,6 +119,18 @@
     display: block;
 }
 
+        .urgency-counter {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ef4444;
+    margin-bottom: 8px;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
         .instructions-title {
             font-size: 16px;
             font-weight: 600;
@@ -321,6 +333,10 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
                     </div>
                 </div>
             </div>
+
+            <div class="urgency-counter">
+    ⚡ Only <span id="spots-left">13</span> spots left today
+</div>
             
             <a href="#" class="download-button" id="mainCTA" onclick="trackConversion()">
                 Download for Free
@@ -348,34 +364,51 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
     </div>
 
     <script>
-        // Live stats counters
-        let installsToday = 173;
-        let payoutsToday = 12847;
-        let avgEarnings = 87.3;
+       // Live stats counters
+let installsToday = 187;
+let payoutsToday = 12847;
+let avgEarnings = 87.3;
+let installTimerStarted = false;
 
-        function updateLiveStats() {
-            // Update installs (every 3-5 minutes)
-            if (Math.random() < 0.01) { // ~1% chance per second = roughly every 3-5 minutes
+function updateLiveStats() {
+    // Handle install updates with specific timing
+    if (!installTimerStarted) {
+        // First update after 30 seconds
+        setTimeout(() => {
+            installsToday++;
+            document.getElementById('installs-today').textContent = installsToday;
+            const spotsLeft = Math.max(0, 200 - installsToday);
+            document.getElementById('spots-left').textContent = spotsLeft;
+            
+            // Then continue every 1.5 minutes (90 seconds)
+            setInterval(() => {
                 installsToday++;
                 document.getElementById('installs-today').textContent = installsToday;
-            }
+                const spotsLeft = Math.max(0, 200 - installsToday);
+                document.getElementById('spots-left').textContent = spotsLeft;
+            }, 90000); // 1.5 minutes = 90,000ms
             
-            // Update payouts (every 30-45 seconds)
-            if (Math.random() < 0.03) { // ~3% chance per second = roughly every 30-45 seconds
-                payoutsToday += Math.floor(Math.random() * 3) + 1; // Add 1-3
-                document.getElementById('payouts-today').textContent = payoutsToday.toLocaleString();
-            }
-            
-            /// Update average earnings (every 2-4 minutes, fluctuate ±3)
-if (Math.random() < 0.015) { // ~1.5% chance per second = roughly every 2-4 minutes
-    const change = (Math.random() - 0.5) * 6; // -3 to +3
-    avgEarnings = Math.max(83.0, Math.min(89.0, avgEarnings + change));
-    document.getElementById('avg-earnings').textContent = '$' + avgEarnings.toFixed(1);
+        }, 30000); // 30 seconds = 30,000ms
+        
+        installTimerStarted = true;
+    }
+    
+    // Update payouts (every 30-45 seconds)
+    if (Math.random() < 0.03) {
+        payoutsToday += Math.floor(Math.random() * 3) + 1;
+        document.getElementById('payouts-today').textContent = payoutsToday.toLocaleString();
+    }
+    
+    // Update average earnings (every 2-4 minutes, fluctuate ±3)
+    if (Math.random() < 0.015) {
+        const change = (Math.random() - 0.5) * 6;
+        avgEarnings = Math.max(83.0, Math.min(89.0, avgEarnings + change));
+        document.getElementById('avg-earnings').textContent = '$' + avgEarnings.toFixed(1);
+    }
 }
-        }
 
-        // Start live stats updates
-        setInterval(updateLiveStats, 1000); // Check every second
+// Start live stats updates
+setInterval(updateLiveStats, 1000);
 
         // Countdown timer
         function updateTimer() {
