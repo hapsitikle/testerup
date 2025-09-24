@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn Star - Start Earning Now</title>
+    <title>EarnStar - Play Games & Do Surveys To Earn Cash</title>
     <style>
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -12,275 +13,203 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #2a2f3a;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-        }
-
-           @media (max-width: 768px) {
-    body {
-        padding: 8px;
-        align-items: flex-start;
-        padding-top: 8px;
-    }
-    
-    .container {
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 6px;
-        align-items: flex-start;
-        padding-top: 6px;
-    }
-    
-    .container {
-        margin: 0 auto;
-        max-width: 340px;
-    }
-}
-
-@media (max-width: 380px) {
-    body {
-        padding: 6px;
-        align-items: flex-start;
-        padding-top: 6px;
-    }
-    
-    .container {
-        margin: 0 auto;
-    }
-}
-
-        .container {
-            max-width: 360px;
-            width: 100%;
-            background: #1e2329;
-            border-radius: 15px;
-            padding: 0;
-            text-align: center;
-            border: 1px solid #3a4047;
-            overflow: hidden;
-            box-shadow: 0 0 40px rgba(239, 68, 68, 0.15);
-        }
-
-        .header {
-            padding: 15px 20px 10px 20px;
-            border-bottom: 1px solid #3a4047;
-        }
-
-        .logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-        .logo-placeholder {
-            width: 120px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .bonus-section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.bonus-progress h3 {
-    font-size: 15px;
-    font-weight: 700;
-    text-align: left;
-}
-
-.bonus-amount {
-    color: #10b981;
-}
-
-.expires-text {
-    color: #ef4444;
-    font-size: 15px;
-    font-weight: 700;
-}
-        .progress-bar {
-            background: #3a4047;
-            height: 6px;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 0;
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.2);
-        }
-
-        .progress-fill {
-            background: linear-gradient(90deg, #ef4444, #f97316);
-            height: 100%;
-            width: 75%;
-            border-radius: 3px;
-        }
-
-        .content {
-            padding: 15px 20px 15px 20px;
-        }
-
-        .app-title {
-    font-size: 30px;
-    font-weight: 700;
-    color: #fbbf24;
-    margin-bottom: 3px;
-    white-space: nowrap;
-}
-
-.app-tagline {
-    font-size: 15px;
-    font-weight: 500;
-    color: #9ca3af;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: block;
-}
-
-        .urgency-counter {
-    text-align: center;
-    font-size: 13px;
-    font-weight: 600;
-    color: #ef4444;
-    margin-top: 4px;
-    margin-bottom: 6px;
-    background: rgba(239, 68, 68, 0.1);
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-        .instructions-title {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: white;
-            text-align: left;
+            line-height: 1.6;
+            color: #334155;
+            background: white;
+            height: 100vh;
+            overflow-x: hidden;
         }
 
-        .steps-container {
-            background: #262b34;
-            border-radius: 8px;
-            padding: 5px;
-            margin-bottom: 5px;
-            box-shadow: 0 0 30px rgba(239, 68, 68, 0.12);
-        }
-
-        .step {
+        /* Layout Container */
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 0 16px;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0F172A;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748B;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 52px;
+            padding: 0 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: #10B981;
+            color: white;
+            box-shadow: 0 4px 18px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            color: #0F172A;
+            padding: 32px 16px 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .hero h1 {
+            color: #0F172A;
+            margin: 12px 0 8px;
+            font-size: 26px;
+        }
+
+        .hero-subtext {
+            font-size: 15px;
+            margin-bottom: 20px;
+            color: #334155;
+        }
+
+        .welcome-chip {
+            background: linear-gradient(135deg, #7C4DFF 0%, #FF6AC1 100%);
+            color: white;
+            border-radius: 24px;
+            padding: 10px 14px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+        }
+
+        /* Steps Section */
+        .steps {
+            padding: 24px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .steps-title {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0F172A;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .step-card {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
             align-items: flex-start;
-            margin-bottom: 0;
-            text-align: left;
-            padding: 12px;
-            border-radius: 0;
-            background: transparent;
-            border-bottom: 1px solid #3a4047;
+            border: 1px solid #E2E8F0;
         }
 
-        .step:last-child {
-            border-bottom: none;
-        }
-
-        .step-icon {
-            width: 22px;
-            height: 22px;
-            background: #ef4444;
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #7C4DFF, #FF6AC1);
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            font-weight: 700;
+            font-size: 13px;
             flex-shrink: 0;
-            margin-top: 2px;
         }
 
-        .step-icon::after {
-            content: "✓";
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .step-content h4 {
+        .step-content h3 {
             font-size: 15px;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 4px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 2px;
         }
 
         .step-content p {
             font-size: 13px;
-            color: #9ca3af;
-            line-height: 1.4;
+            color: #64748B;
         }
 
-        .download-button {
-            background: linear-gradient(135deg, #ef4444, #f97316);
-            color: white;
-            border: none;
-            padding: 14px 40px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 8px;
-            width: 100%;
-            cursor: pointer;
-            margin: 6px 0 8px 0;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 0 35px rgba(239, 68, 68, 0.25);
+        .earnings-note {
+            text-align: center;
+            font-size: 13px;
+            color: #64748B;
+            margin-bottom: 20px;
         }
 
-        .download-button:hover {
-            transform: translateY(-1px);
+        /* CTA Section */
+        .cta-section {
+            padding: 0 16px 16px;
+            flex-shrink: 0;
         }
 
-        .disclaimer {
-            font-size: 12px;
-            color: #9ca3af;
-            margin-bottom: 10px;
-        }
-
-        .social-proof {
-            background: #262b34;
-            border-radius: 8px;
-            padding: 10px;
-            margin-top: 0;
-            text-align: left;
+        /* Stats Card */
+        .stats-card {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+            border: 1px solid #E2E8F0;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
+            gap: 16px;
+            text-align: center;
         }
 
         .stat-item {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .stat-number {
             font-size: 16px;
-            color: #fbbf24;
+            color: #7C4DFF;
             font-weight: 700;
             display: block;
             margin-bottom: 2px;
@@ -288,103 +217,138 @@
 
         .stat-label {
             font-size: 11px;
-            color: #9ca3af;
+            color: #64748B;
             font-weight: 500;
         }
 
+        .store-note {
+            text-align: center;
+            font-size: 12px;
+            color: #64748B;
+            margin-top: 12px;
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus-visible {
+            outline: 2px solid #7C4DFF;
+            outline-offset: 2px;
+        }
+
+        /* Mobile optimization */
         @media (max-width: 480px) {
             .container {
-    
-                max-width: 340px;
+                padding: 0 12px;
+            }
+            
+            .hero {
+                padding: 24px 12px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+            }
+            
+            .steps {
+                padding: 20px 12px;
+            }
+            
+            .cta-section {
+                padding: 0 12px 12px;
+            }
+        }
+
+        /* Ensure everything fits above fold */
+        @media (max-height: 700px) {
+            .hero {
+                padding: 24px 16px 16px;
+            }
+            
+            .steps {
+                padding: 16px 16px;
+            }
+            
+            .step-card {
+                padding: 12px;
+            }
+            
+            .stats-card {
+                padding: 12px;
+                margin: 12px 0;
             }
         }
     </style>
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '806823535224289');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '806823535224289');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="logo-container">
-    <div class="app-title">Earn Star</div>
-    <div class="app-tagline">Earn Over $100 A Day</div>
-</div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <p class="eyebrow">EARNSTAR</p>
+            <h1>Play Games & Do Surveys To Earn Cash</h1>
+            <p class="hero-subtext">Free to install • Start in under 2 minutes</p>
             
-            <div class="bonus-section">
-    <div class="bonus-progress">
-        <h3><span class="bonus-amount">$20 Install Bonus:</span> <span class="expires-text">Expires in <span class="timer-text">04:59</span></span></h3>
-    </div>
-</div>
-            
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
+            <div class="welcome-chip">
+                💎 $5 welcome gift + prize boxes every $5 earned
             </div>
-        </div>
-        
-        <div class="content">
-            <div class="instructions-title">Follow the Instructions Below:</div>
+        </section>
+
+        <!-- Steps Section -->
+        <section class="steps">
+            <h2 class="steps-title">How it works</h2>
             
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-icon"></div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>Install the Earn Star App</h4>
-                        <p>Takes 30 seconds • Click the button below!</p>
+                        <h3>Install EarnStar</h3>
+                        <p>Free download from Google Play or App Store</p>
                     </div>
                 </div>
 
-                <div class="step">
-                    <div class="step-icon"></div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>Claim Your $20 Install Bonus</h4>
-                        <p>Cashout using Paypal or Visa instantly!</p>
+                        <h3>Open & Sign Up</h3>
+                        <p>Quick registration takes 1–2 minutes</p>
                     </div>
                 </div>
-                
-                <div class="step">
-                    <div class="step-icon"></div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
                     <div class="step-content">
-                        <h4>Get Started with Tasks</h4>
-                        <p>Earn $50-$100 per task!</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon"></div>
-                    <div class="step-content">
-                        <h4>Cash Out Your Earnings</h4>
-                        <p>Get Paid in Minutes via Paypal or Visa!</p>
+                        <h3>Start a survey or game</h3>
+                        <p>Cash out via PayPal, Amazon, or Visa</p>
                     </div>
                 </div>
             </div>
 
-            <div class="urgency-counter">
-    💰 $20 Install Bonus: <span id="spots-left">13</span> spots remaining <br>
-        Exlusive For First 200 Installs Today
-</div>
-            
-            <a href="#" class="download-button" id="mainCTA" onclick="trackConversion()">
-                Download for Free
+            <p class="earnings-note">Surveys up to $5 • Some game offers up to $100</p>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <a href="{{ANDROID_STORE_URL}}" class="btn btn-primary" onclick="trackConversion()" aria-label="Download EarnStar for free">
+                Download For Free
             </a>
-            
-            <div class="disclaimer">4.5★ Rated • Trusted by 1M+ Users</div>
-            
-            <div class="social-proof">
+
+            <!-- Stats Card -->
+            <div class="stats-card">
                 <div class="stats-grid">
                     <div class="stat-item">
                         <span class="stat-number" id="installs-today">187</span>
@@ -400,78 +364,53 @@ src="https://www.facebook.com/tr?id=806823535224289&ev=PageView&noscript=1"
                     </div>
                 </div>
             </div>
-        </div>
+
+            <p class="store-note">4.4★ Rated • Trusted by 100K+ Users</p>
+        </section>
     </div>
 
     <script>
-       // Live stats counters
-let installsToday = 187;
-let payoutsToday = 12847;
-let avgEarnings = 87.3;
-let installTimerStarted = false;
+        // Live stats counters
+        let installsToday = 187;
+        let payoutsToday = 12847;
+        let avgEarnings = 87.3;
+        let installTimerStarted = false;
 
-function updateLiveStats() {
-    // Handle install updates with specific timing
-    if (!installTimerStarted) {
-        // First update after 30 seconds
-        setTimeout(() => {
-            installsToday++;
-            document.getElementById('installs-today').textContent = installsToday;
-            const spotsLeft = Math.max(0, 200 - installsToday);
-            document.getElementById('spots-left').textContent = spotsLeft;
-            
-            // Then continue every 1.5 minutes (90 seconds)
-            setInterval(() => {
-                installsToday++;
-                document.getElementById('installs-today').textContent = installsToday;
-                const spotsLeft = Math.max(0, 200 - installsToday);
-                document.getElementById('spots-left').textContent = spotsLeft;
-            }, 90000); // 1.5 minutes = 90,000ms
-            
-        }, 30000); // 30 seconds = 30,000ms
-        
-        installTimerStarted = true;
-    }
-    
-    // Update payouts (every 30-45 seconds)
-    if (Math.random() < 0.03) {
-        payoutsToday += Math.floor(Math.random() * 3) + 1;
-        document.getElementById('payouts-today').textContent = payoutsToday.toLocaleString();
-    }
-    
-    // Update average earnings (every 2-4 minutes, fluctuate ±3)
-    if (Math.random() < 0.015) {
-        const change = (Math.random() - 0.5) * 6;
-        avgEarnings = Math.max(83.0, Math.min(89.0, avgEarnings + change));
-        document.getElementById('avg-earnings').textContent = '$' + avgEarnings.toFixed(1);
-    }
-}
-
-// Start live stats updates
-setInterval(updateLiveStats, 1000);
-
-        // Countdown timer
-        function updateTimer() {
-            const timerElement = document.querySelector('.timer-text');
-            let timeLeft = 299; // 4:59 in seconds
-            
-            function tick() {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;                
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    setTimeout(tick, 1000);
-                } else {
-                    timerElement.textContent = 'Bonus expired!';
-                }
+        function updateLiveStats() {
+            // Handle install updates with specific timing
+            if (!installTimerStarted) {
+                // First update after 30 seconds
+                setTimeout(() => {
+                    installsToday++;
+                    document.getElementById('installs-today').textContent = installsToday;
+                    
+                    // Then continue every 1.5 minutes (90 seconds)
+                    setInterval(() => {
+                        installsToday++;
+                        document.getElementById('installs-today').textContent = installsToday;
+                    }, 90000); // 1.5 minutes = 90,000ms
+                    
+                }, 30000); // 30 seconds = 30,000ms
+                
+                installTimerStarted = true;
             }
             
-            tick();
+            // Update payouts (every 30-45 seconds)
+            if (Math.random() < 0.03) {
+                payoutsToday += Math.floor(Math.random() * 3) + 1;
+                document.getElementById('payouts-today').textContent = payoutsToday.toLocaleString();
+            }
+            
+            // Update average earnings (every 2-4 minutes, fluctuate ±3)
+            if (Math.random() < 0.015) {
+                const change = (Math.random() - 0.5) * 6;
+                avgEarnings = Math.max(83.0, Math.min(89.0, avgEarnings + change));
+                document.getElementById('avg-earnings').textContent = '$' + avgEarnings.toFixed(1);
+            }
         }
-        
-        // Start timer when page loads
-        window.addEventListener('load', updateTimer);
+
+        // Start live stats updates
+        setInterval(updateLiveStats, 1000);
         
         // CTA tracking function
         function trackConversion() {
