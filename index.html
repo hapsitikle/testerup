@@ -343,7 +343,7 @@
 
         <!-- CTA Section -->
         <section class="cta-section">
-            <a href="#" class="btn btn-primary" onclick="trackConversion()" aria-label="Download EarnStar for free">
+            <a href="#" class="btn btn-primary" onclick="trackConversion()">
                 Download For Free
             </a>
 
@@ -412,20 +412,19 @@
         // Start live stats updates
         setInterval(updateLiveStats, 1000);
         
-        // CTA tracking function
         function trackConversion() {
-            // Check if subscribe event has already been tracked in this session
-            if (!sessionStorage.getItem('subscribeTracked')) {
-                // Track Facebook subscribe event
-                fbq('track', 'Subscribe');
-                // Mark as tracked for this session
-                sessionStorage.setItem('subscribeTracked', 'true');
-                console.log('Subscribe event tracked');
-            }
-            
-            // Redirect to the tracking URL
-            window.location.href = 'https://track.gamingboost.club/click';
-        }
+    // Check if subscribe event has already been tracked (across all tabs)
+    if (!localStorage.getItem('subscribeTracked')) {
+        // Track Facebook subscribe event
+        fbq('track', 'Subscribe');
+        // Mark as tracked for this browser
+        localStorage.setItem('subscribeTracked', 'true');
+        console.log('Subscribe event tracked');
+    }
+    
+    // Redirect to the tracking URL
+    window.location.href = 'https://track.gamingboost.club/click';
+}
     </script>
 </body>
 </html>
